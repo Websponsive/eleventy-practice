@@ -1,7 +1,22 @@
 ---
 layout: layout.njk
+title: Test page
+items: 
+    - hey
+    - mister
+    - polismen
 ---
 
+<h1>Hey, this is my page</h1>
+<ul>
+    {% for item in items -%}
+    <li>{{ item }}</li>
+    {% endfor -%}
+</ul>
+{% include "_footer.html" %}
+
+
+<h1>Blogs: </h1>
 <ul>
     {% for post in collections.blog-post -%}
     <li>
