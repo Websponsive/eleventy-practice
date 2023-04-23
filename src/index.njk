@@ -1,0 +1,17 @@
+---
+layout: layout.njk
+title: Test page
+items: 
+    - hey
+    - mister
+    - polismen
+---
+
+<h1>Hey, this is my page</h1>
+<ul>
+    {% for item in items -%}
+    <li>{{ item }}</li>
+    {% endfor -%}
+</ul>
+<a href="/postlist/">Post list</a> 
+{% include "_footer.html" %}
