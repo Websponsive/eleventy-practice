@@ -2,7 +2,8 @@ const moment = require('moment-timezone')
 
 module.exports = function (eleventyConfig) {
    
-    eleventyConfig.addPassthroughCopy('/css');
+    eleventyConfig.addPassthroughCopy('style.css');
+    eleventyConfig.addPassthroughCopy('blog.css');
     
     eleventyConfig.addFilter("formatDate", date => {
         return moment(date).tz('GMT').format('DD.MM.YYYY')
@@ -12,7 +13,7 @@ module.exports = function (eleventyConfig) {
         dir: {
             input: "src"
         },
-    
+        passthroughFileCopy: true,
         templateFormats: ["njk", "md", "html"]
     }
 }; 
