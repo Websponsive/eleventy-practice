@@ -6,6 +6,4 @@ image: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUSEhIREhISEh
 tags:
   - blog
 ---
-**Hey mister polismen**
-
-**Marius Trelea on the beat**
+Hey mister polismen. Marius Trelea on the beat
