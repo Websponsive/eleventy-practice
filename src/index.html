@@ -1,5 +1,5 @@
 ---
-layout: layout.njk
+layout: "layout.njk"
 title: Test page
 items: 
     - hey
@@ -8,19 +8,25 @@ items:
 ---
 
 <h1>Hey, this is my page</h1>
-<ul>
-    {% for item in items -%}
-    <li>{{ item }}</li>
-    {% endfor -%}
-</ul>
-{% include "_footer.html" %}
 
 
 <h1>Blogs: </h1>
 <ul>
-    {% for post in collections.blog-post -%}
-    <li>
-        <a href="{{ post.url }}">{{ post.data.title }}, Posted on {{ post.data.date | formatDate}}</a>
-    </li>
-    {% endfor -%}
+  {% for post in collections.blog | reverse -%}
+  <li>
+      <a href="{{ post.url }}">{{ post.data.title }}, Posted on {{ post.data.date | formatDate}}, by {{ post.data.author }} </a>
+  </li>
+  {% endfor -%}
 </ul>
+
+<script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+</script>
