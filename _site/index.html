@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test page</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
     
@@ -18,21 +18,21 @@
       <a href="/blogs/post3/">Blog Post, Posted on 04.08.2024, by Eduard </a>
   </li>
   </ul>
-
-<script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-</script>
     <footer>
     <h3>This was developed by websponsive</h3>
 </footer>
 
+
+    <script>
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+    </script>
 </body>
 </html>
